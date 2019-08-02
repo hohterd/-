@@ -118,7 +118,7 @@ public class Lection2{
         System.out.println("Введите год");
         int year = sc.nextInt();
         sc.close();
-        if(month>12 && month<=0){
+        if(month>12 || month <=0){
             System.out.println("Нереальная дата");
         }
         else {
