@@ -1,4 +1,4 @@
-package Lection2;
+package lection2_if_else;
 
 import java.util.Scanner;
 
@@ -119,7 +119,7 @@ public class Lection2{
         int year = sc.nextInt();
         sc.close();
         if(month>12 || month <=0){
-            System.out.println("Нереальная дата");
+            System.out.println("Неправильный месяц");
         }
         else {
             switch(month){
