@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Lection4 {
     public static void main(String[] args) {
-        //Exercise1();
-        Exercise2();
+        Exercise1();
+        //Exercise2();
     }
 
     public static class TimeShift{
@@ -33,6 +33,22 @@ public class Lection4 {
         public void systemOut(){
             System.out.println("Время: " + "часов = " + this.hours + ", минут = " + this.minutes + ", секунд = " + this.seconds);
         }
+    }
+
+    public static void Exercise1(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите секунды, минуты, часы");
+        int seconds = sc.nextInt();
+        int minutes = sc.nextInt();
+        int hours = sc.nextInt();
+        TimeShift showTimeSecMinHours = new TimeShift(seconds,minutes,hours);
+        System.out.println("Тест метода получения общего количсетва секунд | Секунды = " + showTimeSecMinHours.howMuchSeconds());
+        System.out.println("Введите общее количество секунд");
+        int seconds2 = sc.nextInt();
+        sc.close();
+        TimeShift showTimeSeconds = new TimeShift(seconds2);
+        System.out.println("Тест метода вывода данных:");
+        showTimeSeconds.systemOut();
     }
 
     public static class ATM{
@@ -104,21 +120,6 @@ public class Lection4 {
         }
     }
 
-    public static void Exercise1(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите секунды, минуты, часы");
-        int seconds = sc.nextInt();
-        int minutes = sc.nextInt();
-        int hours = sc.nextInt();
-        TimeShift showTimeSecMinHours = new TimeShift(seconds,minutes,hours);
-        System.out.println("Тест метода получения общего количсетва секунд | Секунды = " + showTimeSecMinHours.howMuchSeconds());
-        System.out.println("Введите общее количество секунд");
-        int seconds2 = sc.nextInt();
-        sc.close();
-        TimeShift showTimeSeconds = new TimeShift(seconds2);
-        System.out.println("Тест метода вывода данных:");
-        showTimeSeconds.systemOut();
-    }
 
     public static void Exercise2(){
         ATM myTry = new ATM (10,10, 10);
