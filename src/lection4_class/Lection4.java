@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Lection4 {
     public static void main(String[] args) {
-        Exercise1();
-        //Exercise2();
+        //Exercise1();
+        Exercise2();
     }
 
     public static class TimeShift{
@@ -69,49 +69,49 @@ public class Lection4 {
             this.quantity_100 = this.quantity_100 + value100;
         }
 
-        public boolean takingOffMoney(int moneyPay){
-                int taking20 = 0;
-                int taking50 = 0;
-                int taking100 = 0;
-                int reserved50 = 0;
-                if (moneyPay % 10 == 0) {
-                    if (moneyPay % 20 != 0) {
-                        if (this.quantity_50 == 0) {
-                            System.out.println("Невозможно выдать сумму номиналами 100, 50, 20 (нет 50)");
-                            return false;
-                        } else {
-                            reserved50 += 1;
-                            moneyPay -= reserved50 * 50;
-                        }
-                    }
-                    if (moneyPay / 100 <= this.quantity_100) {
-                        taking100 = moneyPay / 100;
-                        moneyPay -= taking100 * 100;
-                    } else {
-                        taking100 = this.quantity_100;
-                        moneyPay -= taking100 * 100;
-                    }
-                    if (moneyPay / 50 <= this.quantity_50-reserved50) {
-                        taking50 = moneyPay / 50;
-                        moneyPay -= taking50 * 50;
-                    } else {
-                        taking50 = this.quantity_50-reserved50;
-                        moneyPay -= taking50 * 50;
-                    }
-                    if (moneyPay / 20 <= this.quantity_20) {
-                        taking20 = moneyPay / 20;
-                        moneyPay -= taking20 * 20;
-                        System.out.println("Выдано номиналом 100: " + taking100 + ", номиналом 50: " + (int)(taking50+reserved50) + ", номиналом 20: " + taking20);
-                        return true;
-                    } else {
-                        System.out.println("Недостаточно средств в банкомате");
+        boolean takingOffMoney(int moneyPay) {
+            int taking20 = 0;
+            int taking50 = 0;
+            int taking100 = 0;
+            int reserved50 = 0;
+            if (moneyPay % 10 == 0) {
+                if (moneyPay % 20 != 0) {
+                    if (this.quantity_50 == 0) {
+                        System.out.println("Невозможно выдать сумму номиналами 100, 50, 20 (нет 50)");
                         return false;
+                    } else {
+                        reserved50 += 1;
+                        moneyPay -= reserved50 * 50;
                     }
+                }
+                if (moneyPay / 100 <= this.quantity_100) {
+                    taking100 = moneyPay / 100;
+                    moneyPay -= taking100 * 100;
                 } else {
-                    System.out.println("Невозможно выдать сумму номиналами 100, 50, 20");
+                    taking100 = this.quantity_100;
+                    moneyPay -= taking100 * 100;
+                }
+                if ((moneyPay / 100)*2 <= this.quantity_50-reserved50) {
+                    taking50 = (moneyPay / 100)*2;
+                    moneyPay -= taking50 * 50;
+                } else {
+                    taking50 = ((this.quantity_50-reserved50)/2)*2;
+                    moneyPay -= taking50 * 50;
+                }
+                if (moneyPay / 20 <= this.quantity_20) {
+                    taking20 = moneyPay / 20;
+                    moneyPay -= taking20 * 20;
+                    System.out.println("Выдано номиналом 100: " + taking100 + ", номиналом 50: " + (int)(taking50+reserved50) + ", номиналом 20: " + taking20);
+                    return true;
+                } else {
+                    System.out.println("Недостаточно средств в банкомате");
                     return false;
                 }
+            } else {
+                System.out.println("Невозможно выдать сумму номиналами 100, 50, 20");
+                return false;
             }
+        }
 
         public ATM(int value20, int value50, int value100){
             this.quantity_20 = value20;
@@ -122,7 +122,11 @@ public class Lection4 {
 
 
     public static void Exercise2(){
-        ATM myTry = new ATM (10,10, 10);
-        myTry.takingOffMoney(170);
+        /*Scanner sc = new Scanner(System.in);
+        System.out.println("Введите нужную сумму");
+        int money = sc.nextInt();
+        sc.close();*/
+        ATM myTry = new ATM (4,1, 4);
+        myTry.takingOffMoney(510);
     }
 }
