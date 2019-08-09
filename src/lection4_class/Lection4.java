@@ -122,11 +122,11 @@ public class Lection4 {
 
 
     public static void Exercise2(){
-        /*Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Введите нужную сумму");
         int money = sc.nextInt();
-        sc.close();*/
-        ATM myTry = new ATM (4,1, 4);
-        myTry.takingOffMoney(510);
+        sc.close();
+        ATM myTry = new ATM (20,20,20);
+        myTry.takingOffMoney(money);
     }
 }
