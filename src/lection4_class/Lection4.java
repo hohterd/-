@@ -76,8 +76,8 @@ public class Lection4 {
             int reserved50 = 0;
             if (moneyPay % 10 == 0) {
                 if (moneyPay % 20 != 0) {
-                    if (this.quantity_50 == 0) {
-                        System.out.println("Невозможно выдать сумму номиналами 100, 50, 20 (нет 50)");
+                    if (this.quantity_50 == 0|| moneyPay == 30 || moneyPay == 10) {
+                        System.out.println("Невозможно выдать сумму номиналами 100, 50, 20");
                         return false;
                     } else {
                         reserved50 += 1;
@@ -126,7 +126,7 @@ public class Lection4 {
         System.out.println("Введите нужную сумму");
         int money = sc.nextInt();
         sc.close();
-        ATM myTry = new ATM (20,20,20);
+        ATM myTry = new ATM (2, 1,0);
         myTry.takingOffMoney(money);
     }
 }
