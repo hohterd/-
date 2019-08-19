@@ -19,8 +19,37 @@ public class Lection6_RPG {
 
     static class BattleGroud{
         public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Выберите класс: 1 - Воин, 2 - Маг, 3 - Лучник");
+            int number = sc.nextInt();
+            System.out.println("Введите имя: ");
+            String name = sc.next();
+            Hero hero = new Warrior(name);
+            switch (number) {
+                case 1:
+                    hero = new Warrior(name);
+                    break;
+                case 2:
+                    hero = new Mage(name);
+                    break;
+                case 3:
+                    hero = new Archer(name);
+                    break;
+            }
+            System.out.println("Выберите врага: 1 - Зомби, 2 - Змея, 3 - Вампир");
+            int number1 = sc.nextInt();
             Enemy enemy = new Vampire();
-            Hero hero = new Mage("Qwerty");
+            switch (number1) {
+                case 1:
+                    enemy = new Zombie();
+                    break;
+                case 2:
+                    enemy = new Snake();
+                    break;
+                case 3:
+                    enemy = new Vampire();
+                    break;
+            }
             startBattle(enemy, hero);
         }
     }
