@@ -4,9 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Lection6_RPG {
-    /*static class TrainingGround{
+    static class TrainingGround{
         public static void main(String[] args) {
-            Enemy enemy = new Enemy();
+           Enemy enemy = new Zombie();
             Hero heroWar = new Warrior("Warrior");
             heroWar.AttackEnemy(enemy);
             Hero heroMage = new Mage("Mage");
@@ -15,7 +15,7 @@ public class Lection6_RPG {
             heroArch.AttackEnemy(enemy);
         }
     }
-    */
+
 
     static class BattleGroud{
         public static void main(String[] args) {
