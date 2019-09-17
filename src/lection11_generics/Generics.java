@@ -16,18 +16,13 @@ public class Generics {
     }
 
     public static void Exercise4(){
-        Numbers <Double> doubleNumbers = new Numbers(15.4,9.2);
-        Numbers <Integer> integerNumbers = new Numbers(18,6);
+        Numbers doubleNumbers = new Numbers(15,9);
 
         System.out.println(Numbers.add(doubleNumbers.number1,doubleNumbers.number2));
         System.out.println(Numbers.sub(doubleNumbers.number1,doubleNumbers.number2));
         System.out.println(Numbers.multiply(doubleNumbers.number1,doubleNumbers.number2));
         System.out.println(Numbers.divide(doubleNumbers.number1,doubleNumbers.number2));
 
-        System.out.println(Numbers.add(integerNumbers.number1,integerNumbers.number2));
-        System.out.println(Numbers.sub(integerNumbers.number1,integerNumbers.number2));
-        System.out.println(Numbers.multiply(integerNumbers.number1,integerNumbers.number2));
-        System.out.println(Numbers.divide(integerNumbers.number1,integerNumbers.number2));
     }
 }
 
