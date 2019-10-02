@@ -42,7 +42,7 @@ public class Scientist extends Thread{
         }
         int limitFactor = stash.get(RIGHT_HAND);
         for(Map.Entry<Details,Integer> pair: stash.entrySet()){
-            if(limitFactor<pair.getValue()){
+            if(limitFactor>pair.getValue()){
                 limitFactor = pair.getValue();
             }
         }
