@@ -53,14 +53,14 @@ public class Dump extends Thread {
             sum += val;
         }
         if(quantity>=sum){
-            while(sum!=0){
                 for(Map.Entry<Details,Integer> pair: garbageDetails.entrySet()){
                     if (pair.getValue()>0){
-                        list.add(pair.getKey());
-                        sum--;
+                        for (int i = 0; i < pair.getValue(); ++i) {
+                            list.add(pair.getKey());
+                        }
+                        garbageDetails.put(pair.getKey(),0);
                     }
                 }
-            }
         }else{
             while(quantity!=0){
                 Details temp = randomDetail();
