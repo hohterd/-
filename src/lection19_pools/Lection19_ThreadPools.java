@@ -11,6 +11,7 @@ public class Lection19_ThreadPools {
     public static void Exercise1(){
         ThreadPoolExercise1 thread = new ThreadPoolExercise1();
         thread.start();
+
     }
 
     public static void Exercise2(){

@@ -22,6 +22,7 @@ public class ThreadPoolExercise1 extends Thread {
             thread.shutdown();
         }
         System.out.println("Ввод завершен");
+
     }
 
 

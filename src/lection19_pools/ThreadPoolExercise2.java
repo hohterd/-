@@ -51,5 +51,6 @@ public class ThreadPoolExercise2 extends Thread{
         service.shutdown();
         long endTime = System.nanoTime();
         System.out.println(String.format("Время выполнения %d наносекунд, минимальный элемент %d", (endTime - startTime), min));
+
     }
 }
