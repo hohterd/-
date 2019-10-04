@@ -27,7 +27,7 @@ class Receipt {
                 "Чек №"+id+"\n"+
                 "Дата/время: "+date.toString()+"\n"+
                 "Касса №"+casseNo+"\n"+
-                "№\tТовар\tКол-во\tСтоимость\tСкидка\tСкидка(руб)"+"\n");
+                "№\tТовар\t\t\tКол-во\tСтоимость\tСкидка\tСкидка(руб)"+"\n");
         for (Item listItem : listItems) {
             listItem.print();
         }
